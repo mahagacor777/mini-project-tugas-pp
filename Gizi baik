@@ -13,4 +13,15 @@ string sayurBuah[MAX_MAKANAN];
 
 
 // Jumlah makanan tiap kategori
-int jmlKarbo = 0, jmlProtein = 0, 
+int jmlKarbo = 0, jmlProtein = 0, jmlSayurBuah=0;
+
+
+// Menampilkan menu utama
+void tampilMenu() {
+    cout << "\n=== PENCATAT GIZI HARIAN ===\n";
+    cout << "1. Tambah makanan baru\n";
+    cout << "2. Lihat daftar makanan\n";
+    cout << "3. Tandai makanan sudah dikonsumsi\n";
+    cout << "4. Keluar\n";
+    cout << "Pilih menu (1-4): ";
+}
