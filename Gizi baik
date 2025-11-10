@@ -1,3 +1,7 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
 // Maksimal data makanan per kategori
 const int MAX_MAKANAN = 10;
 
@@ -6,21 +10,7 @@ string karbo[MAX_MAKANAN];
 string protein[MAX_MAKANAN];
 string sayurBuah[MAX_MAKANAN];
 
-bool makanKarbo[MAX_MAKANAN] = {false};
-bool makanProtein[MAX_MAKANAN] = {false};
-bool makanSayurBuah[MAX_MAKANAN] = {false};
+
 
 // Jumlah makanan tiap kategori
-int jmlKarbo = 0, jmlProtein = 0, jmlSayurBuah = 0;
-
-// ===== Function =====
-
-// Menampilkan menu utama
-void tampilMenu() {
-    cout << "\n=== PENCATAT GIZI HARIAN ===\n";
-    cout << "1. Tambah makanan baru\n";
-    cout << "2. Lihat daftar makanan\n";
-    cout << "3. Tandai makanan sudah dikonsumsi\n";
-    cout << "4. Keluar\n";
-    cout << "Pilih menu (1-4): ";
-}
+int jmlKarbo = 0, jmlProtein = 0, 
