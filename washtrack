@@ -1,0 +1,107 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    const int jumlahHari = 7;
+    int pakaian[jumlahHari] = {0}; // Array untuk jumlah pakaian kotor
+    string cuaca[jumlahHari];      // Array untuk cuaca harian
+    int hariSekarang = 0;          // Menyimpan hari ke-berapa terakhir
+    string namaFile = "laundry_data.txt";
+
+    // ============================
+    // Cek apakah sudah ada file data sebelumnya
+    // ============================
+    ifstream fileMasuk(namaFile);
+
+    if (fileMasuk.is_open()) {
+        // Jika file ada, baca data dari file
+        fileMasuk >> hariSekarang;
+        for (int i = 0; i < jumlahHari; i++) {
+            fileMasuk >> pakaian[i] >> cuaca[i];
+        }
+        fileMasuk.close();
+        cout << "📂 Data sebelumnya berhasil dimuat. Hari terakhir: " << hariSekarang << endl;
+    } else {
+        cout << "📁 Tidak ada data sebelumnya. Membuat file baru..." << endl;
+    }
+
+    cout << endl << "=== Program Rencana Laundry Otomatis untuk Anak Kos ===" << endl;
+    cout << "(Program ini menyimpan data ke file agar bisa dilanjutkan setiap hari)" << endl << endl;
+
+    // ============================
+    // Lanjutkan dari hari terakhir
+    // ============================
+    for (int i = hariSekarang; i < jumlahHari; i++) {
+        cout << "Hari ke-" << i + 1 << ":" << endl;
+
+        int tambahan;
+        cout << "Jumlah pakaian kotor baru hari ini : ";
+        cin >> tambahan;
+        pakaian[i] += tambahan;
+
+        cout << "Cuaca hari ini (cerah/mendung/hujan): ";
+        cin >> cuaca[i];
+
+        // ============================
+        // Logika rekomendasi mencuci
+        // ============================
+        if (cuaca[i] == "hujan") {
+            cout << "🌧️ Hujan, jangan mencuci hari ini. Cucian ditunda ke hari berikutnya." << endl;
+            if (i < jumlahHari - 1) {
+                pakaian[i + 1] += pakaian[i];
+            }
+        } else if (pakaian[i] > 8 && cuaca[i] == "cerah") {
+            cout << "✅ Hari yang bagus untuk mencuci! Semua pakaian dicuci hari ini." << endl;
+            pakaian[i] = 0;
+        } else if (pakaian[i] > 10 && cuaca[i] != "hujan") {
+            cout << "⚠️ Sebaiknya mencuci sebagian, tapi bisa ditunda kalau sibuk." << endl;
+            pakaian[i] /= 2;
+            if (i < jumlahHari - 1) {
+                pakaian[i + 1] += pakaian[i];
+            }
+        } else {
+            cout << "🕓 Masih bisa ditunda, belum terlalu banyak." << endl;
+            if (i < jumlahHari - 1) {
+                pakaian[i + 1] += pakaian[i];
+            }
+        }
+
+        cout << "Jumlah pakaian tersisa setelah hari ke-" << i + 1 << ": " << pakaian[i] << " helai" << endl;
+        cout << "-----------------------------------------" << endl;
+
+        hariSekarang = i + 1; // update hari terakhir
+
+        // ============================
+        // Simpan data terkini ke file
+        // ============================
+        ofstream fileKeluar(namaFile);
+        fileKeluar << hariSekarang << endl;
+        for (int j = 0; j < jumlahHari; j++) {
+            fileKeluar << pakaian[j] << " " << cuaca[j] << endl;
+        }
+        fileKeluar.close();
+
+        cout << "💾 Data hari ke-" << i + 1 << " telah disimpan ke file." << endl;
+
+        // Setelah input 1 hari, program berhenti agar bisa dijalankan lagi keesokan hari
+        cout << "\n➡️ Jalankan kembali program besok untuk melanjutkan ke hari berikutnya." << endl;
+        return 0;
+    }
+
+    // ============================
+    // Jika semua 7 hari selesai
+    // ============================
+    cout << endl << "=== Rekap Akhir Minggu ===" << endl;
+    for (int i = 0; i < jumlahHari; i++) {
+        cout << "Hari ke-" << i + 1 << " : Sisa cucian = " << pakaian[i] << " helai (" << cuaca[i] << ")" << endl;
+    }
+
+    // Hapus file agar minggu baru bisa dimulai lagi
+    remove(namaFile.c_str());
+    cout << endl << "📆 Minggu selesai! File data lama dihapus untuk memulai minggu baru." << endl;
+    cout << "Tetap jaga kebersihan, Anak Kos Hebat! 🧺" << endl;
+
+    return 0;
+}
