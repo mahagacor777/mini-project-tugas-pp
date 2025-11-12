@@ -12,7 +12,7 @@ string sayurBuah[MAX_MAKANAN];
 
 
 
-// Jumlah makanan tiap kategori
+// Jumlah makanan tiap kelompok
 int jmlKarbo = 0, jmlProtein = 0, jmlSayurBuah=0;
 
 
