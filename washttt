@@ -2,7 +2,10 @@
 #include <fstream>
 #include <string>
 using namespace std;
+void(int pakaian,int hari, string cuaca)
 int main(){
+
+
 
 
 
