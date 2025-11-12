@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
     const int jumlahHari = 7;
-    int pakaian[jumlahHari] = {0}; // Array untuk jumlah pakaian kotor
-    string cuaca[jumlahHari];      // Array untuk cuaca harian
-    int hariSekarang = 0;          // Menyimpan hari ke-berapa terakhir
+    int pakaian[jumlahHari] = {0}; 
+    string cuaca[jumlahHari];      
+    int hariSekarang = 0;         
     string namaFile = "laundry_data.txt";
 
     // ============================
