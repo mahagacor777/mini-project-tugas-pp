@@ -2,7 +2,9 @@
 #include <fstream>
 #include <string>
 using namespace std;
-void(int pakaian,int hari, string cuaca)
+const int jumlahHari= 7;
+string fileData= "laundry_data.txt";
+string fileRekap= "REkap_mingguan.txt';
 int main(){
 
 
