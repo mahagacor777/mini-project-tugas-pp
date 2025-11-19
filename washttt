@@ -167,7 +167,15 @@ cout << "Pilihan tidak valid!\n";
 }
 }
 }
+int main() {
+    HariData minggu[totalHari];
+    int hariSekarang;
 
+    loadData(minggu, hariSekarang);
+    menuUtama(minggu, hariSekarang);
+
+    return 0;
+}
 
 
     
