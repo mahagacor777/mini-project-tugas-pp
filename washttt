@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 const string dataFile= " wash_data.txt"; //insisialisasi datafile txt sebagai memori atau penyimpanan
-const int totalhari= 7;   // total hari sebagai batas input mingguan
+const int totalHari= 7;   // total hari sebagai batas input mingguan
 
 //inisialisasi variabel haridata dengan struct yang berisi array jumlah pakaian dan cuaca
 //array ini digunakan untuk menampung inputan dari user
@@ -21,7 +21,7 @@ void loadData(HariData data[], int &hariSekarang) {
 
     if (!file.is_open()) {
         hariSekarang = 1;
-        for (int i = 0; i < totalDays; i++) {
+        for (int i = 0; i < totalHari; i++) {
             data[i].pakaian = 0;
             data[i].cuaca = "-";
         }
@@ -29,7 +29,7 @@ void loadData(HariData data[], int &hariSekarang) {
     }
 
     file >> hariSekarang;
-    for (int i = 0; i < totalDays; i++) {
+    for (int i = 0; i < totalHari; i++) {
         file >> data[i].pakaian >> data[i].cuaca;
     }
 
@@ -41,7 +41,7 @@ void saveData(HariData data[], int hariSekarang) {
     file << hariSekarang << endl;     // Simpan hari saat ini ke dalam file
 
     // Untuk menyimpan jumlah pakaian dan cuaca tiap hari ke file
-    for (int i = 0; i < totalDays; i++) {
+    for (int i = 0; i < totalHari; i++) {
         file << data[i].pakaian << " " << data[i].cuaca << endl;
     }
 
@@ -100,3 +100,47 @@ void inputHari(HariData data[], int &hariSekarang ) {
     cout << "\n--- Saran Hari Ini ---\n";
     cout << saranCuci (data[hariSekarang - 1]) << endl;
 
+    int pilihan;
+    cout << "\nApa yang ingin Anda lakukan?\n";
+    cout << "1. Cuci sekarang\n";
+    cout << "2. Tunda mencuci\n";
+    cout << "Pilihan: ";
+    cin >> pilihan;   // Menerima input pilihan dari user
+      
+    // Mengecek pilihan user
+    if (pilihan == 1) {
+    // Jika user memilih mencuci:
+    cout << "Anda memilih mencuci. Semua pakaian hari ini dianggap selesai.\n";
+      
+    // Set jumlah pakaian hari ini menjadi 0 (karena sudah dicuci)
+    data[hariSekarang - 1].pakaian = 0;
+      
+    } else {
+    // Jika user memilih menunda:
+        cout << "Anda memilih menunda. Pakaian menumpuk ke hari berikutnya.\n";
+    }
+      
+    // Pindah ke hari berikutnya
+    hariSekarang++;
+      
+    // Jika hari melewati 7 (lebih dari seminggu), reset minggu baru
+    if (hariSekarang > 7) {
+        resetMingguBaru(data, hariSekarang);
+    }
+
+void tampilMinggu(HariData data[]) {
+    // Menampilkan judul rekap data satu minggu
+    cout << "\n=== Rekap Mingguan ===\n";
+
+    // Perulangan untuk menampilkan data dari hari 1 sampai totalHari
+    for (int i = 0; i < totalHari; i++) {
+
+        // Menampilkan jumlah pakaian dan cuaca untuk setiap hari
+        cout << "Hari " << i + 1 << ": "
+             << data[i].pakaian << " baju, Cuaca: "
+             << data[i].cuaca << endl;
+    }
+}
+
+
+    
