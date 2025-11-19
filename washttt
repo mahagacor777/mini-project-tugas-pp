@@ -13,7 +13,7 @@ string cuaca;
 };
 
   //insisialisasi variabel untuk memberi nilai awal pada sisa pakaian minggulalu
-int sisaMingguLalu= -1;   //nilai= -1, dibuat sekecil mungkin agar saat memulai input hari ke-1 , agar sisa pakaian pada datafile dianggap masih kosong
+int sisaMingguLalu= -1;   //nilai= -1, dibuat sekecil mungkin agar saat memulai input hari ke-1 , sisa pakaian pada datafile dianggap masih kosong
 
 //fungsi load data untuk memuat inputan (membuka dan membaca) datafile secara berulang
 void loadData(HariData data[], int &hariSekarang) {
@@ -36,3 +36,23 @@ void loadData(HariData data[], int &hariSekarang) {
     file.close();  //menutup datafile
 }
 
+void saveData(HariData data[], int hariSekarang) {
+    ofstream file(dataFile);          // Membuka file untuk ditulis
+    file << hariSekarang << endl;     // Simpan hari saat ini ke dalam file
+
+    // Untuk menyimpan jumlah pakaian dan cuaca tiap hari ke file
+    for (int i = 0; i < totalDays; i++) {
+        file << data[i].pakaian << " " << data[i].cuaca << endl;
+    }
+
+    file.close();                    
+}
+// Untuk memberikan saran sesuai dengan kondisi yang telah ditetukan
+string saranCuci(const HariData &hari) {
+    if (hari.cuaca == "hujan")
+        return "Hari hujan, disarankan TIDAK mencuci.";
+    else if (hari.pakaian >= 10)
+        return "Pakaian sudah menumpuk, disarankan mencuci.";
+    else
+        return "Pakaian masih sedikit, boleh mencuci atau menunda.";
+}
