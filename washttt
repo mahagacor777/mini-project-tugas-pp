@@ -73,3 +73,30 @@ void resetMingguBaru(HariData data[], int &hariSekarang) {
 cout << "\n=== Minggu Baru Dimuali ===\n";      // menampilkan teks ke layar terminal
 cout << "Sisa pakaian dari minggu sebelumnya: " << sisa << " baju.\n;
 }
+
+// Fungsi inputHari digunakan untuk mengisi data pakaian dan cuaca
+void inputHari(HariData data[], int &hariSekarang ) {
+
+    if (hariSekarang == 1 && sisaMingguLalu >= 0){
+        cout << "\n=== Hari Pertama Minggu Baru ===\n";
+        cout << "Minggu lalu masih ada sisa pakaian :"
+             << sisaMingguLalu << " baju.\n\n";
+        sisaMingguLalu = -1;
+}
+
+    cout << "=== Input Hari Ke-" << hariSekarang << " ===\n";
+
+    int tambahan;
+    cout << "Masukkan jumlah pakaian hari ini: ";
+    cin >> tambahan;
+
+    string cuaca ;
+    cout << "Masukkan cuaca (cerah/hujan/mendung): ";
+    cin >> cuaca ;
+
+    data[hariSekarang - 1].pakaian += tambahan ;
+    data[hariSekarang - 1].cuaca = cuaca;
+
+    cout << "\n--- Saran Hari Ini ---\n";
+    cout << saranCuci (data[hariSekarang - 1]) << endl;
+
