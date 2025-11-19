@@ -60,7 +60,7 @@ string saranCuci(const HariData &hari) {
 // fungsi resetMingguBaru untuk melakukan reset data mingguan dan membawa sisa pakaian ke minggu selanjutnya 
 void resetMingguBaru(HariData data[], int &hariSekarang) {    // & untuk agar nilai dapat berubah  
     int sisa = data[6].pakaian;      // mengambil sisa pakaian dari minggu sebelumnya
-    sisaMingguLalu = sisa;
+    sisaMingguLalu = sisa;           // menyimpan sisa pakaian untuk ditampilkan di hari pertama minggu selanjutnya
 
     for (int i = 0; i < totalHari; i++) {
         data[i].pakaian = 0;
