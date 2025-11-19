@@ -2,8 +2,8 @@
 #include <fstream>
 #include <string>
 using namespace std;
-const string dataFile= " wash_data.txt";
-const int totalhari= 7;
+const string dataFile= " wash_data.txt"; //insisialisasi datafile txt sebagai memori atau penyimpanan
+const int totalhari= 7;   // total hari sebagai batas input mingguan
 
 //inisialisasi variabel haridata dengan struct yang berisi array jumlah pakaian dan cuaca
 //array ini digunakan untuk menampung inputan dari user
