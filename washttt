@@ -2,10 +2,21 @@
 #include <fstream>
 #include <string>
 using namespace std;
+
+const string dataFile = "wash_data.txt"
 const int jumlahHari= 7;
-string fileData= "laundry_data.txt";
-string fileRekap= "REkap_mingguan.txt';
-int main(){
+
+struct HariData {
+int pakaian;
+string cuaca;
+};
+
+int sisaMingguLalu = -1
+
+
+
+int main(){ 
+}
 
 
 
