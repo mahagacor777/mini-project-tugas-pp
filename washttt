@@ -149,7 +149,7 @@ cout << "\n===== WASH TRACK MENU =====\n";
 cout << "1. Input data hari ini\n";
 cout << "2. Lihat data minggu ini\n";
 cout << "3. Simpan dan keluar\n";
-cout << "Pilihan menu";
+cout << "Pilihan menu : ";
 cin >> pilihan;
 
 switch(pilihan){
