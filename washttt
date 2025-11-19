@@ -56,3 +56,20 @@ string saranCuci(const HariData &hari) {
     else
         return "Pakaian masih sedikit, boleh mencuci atau menunda.";
 }
+
+// fungsi resetMingguBaru untuk melakukan reset data mingguan dan membawa sisa pakaian ke minggu selanjutnya 
+void resetMingguBaru(HariData data[], int &hariSekarang) {
+    int sisa = data[6].pakaian;      // mengambil sisa pakaian dari minggu sebelumnya
+    sisaMingguLalu = sisa;
+
+    for (int i = 0; i < totalHari; i++) {
+        data[i].pakaian = 0;
+        data[i].cuaca = "-";
+    }
+
+    data[0].pakaian = sisa;    // memindahkan sisa pakaian ke minggu baru
+    hariSekarang = 1;          
+
+cout << "\n=== Minggu Baru Dimuali ===\n";      // menampilkan teks ke layar terminal
+cout << "Sisa pakaian dari minggu sebelumnya: " << sisa << " baju.\n;
+}
