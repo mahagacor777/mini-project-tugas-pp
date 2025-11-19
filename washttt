@@ -2,13 +2,13 @@
 #include <fstream>
 #include <string>
 using namespace std;
-const string dataFile= " wash_data.txt"; //insisialisasi datafile txt sebagai memori atau penyimpanan
+const string dataFile= "wash_data.txt"; //insisialisasi datafile txt sebagai memori atau penyimpanan
 const int totalHari= 7;   // total hari sebagai batas input mingguan
 
 //inisialisasi variabel haridata dengan struct yang berisi array jumlah pakaian dan cuaca
 //array ini digunakan untuk menampung inputan dari user
 struct HariData {
-int jumlahpakaian;
+int pakaian;
 string cuaca;
 };
 
@@ -71,7 +71,7 @@ void resetMingguBaru(HariData data[], int &hariSekarang) {
     hariSekarang = 1;          
 
 cout << "\n=== Minggu Baru Dimuali ===\n";      // menampilkan teks ke layar terminal
-cout << "Sisa pakaian dari minggu sebelumnya: " << sisa << " baju.\n;
+cout << "Sisa pakaian dari minggu sebelumnya: " << sisa << " baju.\n";
 }
 
 // Fungsi inputHari digunakan untuk mengisi data pakaian dan cuaca
@@ -127,6 +127,7 @@ void inputHari(HariData data[], int &hariSekarang ) {
     if (hariSekarang > 7) {
         resetMingguBaru(data, hariSekarang);
     }
+} 
 
 void tampilMinggu(HariData data[]) {
     // Menampilkan judul rekap data satu minggu
@@ -158,7 +159,7 @@ break;
 case 2:
 tampilMinggu(data);
 break;
-case 3;
+case 3:
 saveData(data, hariSekarang);
 cout << "Data disimpan. Program selesai.\n";
 return;
