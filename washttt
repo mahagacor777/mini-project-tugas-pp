@@ -141,6 +141,33 @@ void tampilMinggu(HariData data[]) {
              << data[i].cuaca << endl;
     }
 }
+void menuUtama(HariData data[], int &hariSekarang){
+int pilihan;
+while(true){
+cout << "\n===== WASH TRACK MENU =====\n";
+cout << "1. Input data hari ini\n";
+cout << "2. Lihat data minggu ini\n";
+cout << "3. Simpan dan keluar\n";
+cout << "Pilihan menu";
+cin >> pilihan;
+
+switch(pilihan){
+case 1:
+inputHari(data, hariSekarang);
+break;
+case 2:
+tampilMinggu(data);
+break;
+case 3;
+saveData(data, hariSekarang);
+cout << "Data disimpan. Program selesai.\n";
+return;
+default:
+cout << "Pilihan tidak valid!\n";
+}
+}
+}
+
 
 
     
