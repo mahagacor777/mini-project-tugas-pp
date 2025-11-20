@@ -164,10 +164,10 @@ tampilMinggu(data);
 break;
 case 3:
 saveData(data, hariSekarang);
-cout << "Data disimpan. Program selesai.\n";
+cout << "Data disimpan. Program selesai." << endl;
 return;
 default:
-cout << "Eror, Pilihan tidak valid!\n";
+cout << "Eror, Pilihan tidak valid!" << endl;
 }
 }
 }
