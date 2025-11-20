@@ -13,7 +13,7 @@ string cuaca;
 };
 
   //insisialisasi variabel untuk memberi nilai awal pada sisa pakaian minggulalu
-int sisamingguLalu= -1;   //nilai= -1, dibuat sekecil mungkin agar saat memulai input hari ke-1 , sisa pakaian pada datafile dianggap masih kosong
+int sisaMingguLalu= -1;   //nilai= -1, dibuat sekecil mungkin agar saat memulai input hari ke-1 , sisa pakaian pada datafile dianggap masih kosong
 
 //fungsi load data untuk memuat inputan (membuka dan membaca) datafile secara berulang
 void loadData(HariData data[], int &hariSekarang) {
