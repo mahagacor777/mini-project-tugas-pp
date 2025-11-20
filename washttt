@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 using namespace std;
-const string datafile= "wash_data.txt"; //insisialisasi datafile txt sebagai memori atau penyimpanan
+const string dataFile= "wash_data.txt"; //insisialisasi datafile txt sebagai memori atau penyimpanan
 const int totalHari= 7;   // total hari sebagai batas input mingguan
 
 //inisialisasi variabel haridata dengan struct yang berisi array jumlah pakaian dan cuaca
@@ -13,7 +13,7 @@ string cuaca;
 };
 
   //insisialisasi variabel untuk memberi nilai awal pada sisa pakaian minggulalu
-int sisaMingguLalu= -1;   //nilai= -1, dibuat sekecil mungkin agar saat memulai input hari ke-1 , sisa pakaian pada datafile dianggap masih kosong
+int sisamingguLalu= -1;   //nilai= -1, dibuat sekecil mungkin agar saat memulai input hari ke-1 , sisa pakaian pada datafile dianggap masih kosong
 
 //fungsi load data untuk memuat inputan (membuka dan membaca) datafile secara berulang
 void loadData(HariData data[], int &hariSekarang) {
