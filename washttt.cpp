@@ -69,7 +69,7 @@ void resetMingguBaru(HariData data[], int &hariSekarang) {    // & untuk agar ni
     }
 
     data[0].pakaian = sisa;    // memindahkan sisa pakaian ke minggu baru
-    hariSekarang = 1;          
+    hariSekarang = 1;          // mulai hari
 
 cout << "\n=== Minggu Baru Dimuali ===\n";      // menampilkan teks ke layar terminal
 cout << "Sisa pakaian dari minggu sebelumnya: " << sisa << " baju.\n";
