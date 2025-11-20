@@ -1,11 +1,13 @@
 Tugas kelompok Praktikum Pengenalan Pemrograman
 kelompok 9:
-Kineta Adria Candra Kinanti
-Grace Natalie Simanulang
-Ratu Salsabila Humaira
-Chalilaika Novikri 
-Tessa Aufi MUzakiah
-Naila Salsabil Ghozy
+kelompok 9:
+Ketua : Chalilaika Novikri (2517051026)
+Anggota :
+Kineta Adria Candra Kinanti (2517051015)
+Ratu Salsabila Humaira (2517051019)
+Grace Natalie Simanulang (2517051023)
+Tessa Aufi MUzakiah (2517051029)
+Naila Salsabil Ghozy (2517051033)
 
 STUDY KASUS – PROGRAM WASH TRACK
 Mas Ical adalah seorang karyawan swasta yang tinggal di kos dan memiliki jadwal kerja 
