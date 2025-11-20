@@ -142,7 +142,7 @@ void tampilMinggu(HariData data[]) {
              << data[i].cuaca << endl;
     }
 }
-void menuUtama(HariData data[], int hariSekarang){
+void menuUtama(HariData data[], int &hariSekarang){
 int pilihan;
 while(true){
 cout << "\n===== WASH TRACK MENU =====\n";
