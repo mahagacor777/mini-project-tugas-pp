@@ -28,8 +28,9 @@ void loadData(HariData data[], int &hariSekarang) {
         return;    //memberhentikan fungsi pada hari pertama karena datafile masih kosong
     }
 
-    file >> hariSekarang;
-    for (int i = 0; i < totalHari; i++) {
+    file >> hariSekarang;   // Jika file ada, baca hari terakhir
+  
+    for (int i = 0; i < totalHari; i++) {    // loop untuk Membaca seluruh data pakaian & cuaca selama 7 hari dari file
         file >> data[i].pakaian >> data[i].cuaca;
     }
 
