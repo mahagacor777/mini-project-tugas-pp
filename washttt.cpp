@@ -143,6 +143,8 @@ void tampilMinggu(HariData data[]) {
              << data[i].cuaca << endl;
     }
 }
+
+//yang menampilkan menu utama
 void menuUtama(HariData data[], int &hariSekarang){
 int pilihan;
 while(true){
