@@ -1,16 +1,10 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-using namespace std;
-// Maksimal data makanan per kategori
-const int MAX_MAKANAN = 10;
-
-// Array untuk menyimpan makanan dan statusnya
-string karbo[MAX_MAKANAN];
-string protein[MAX_MAKANAN];
-string sayurBuah[MAX_MAKANAN];
+Tugas kelompok Praktikum Pengenalan Pemrograman
+kelompok 9:
+Kineta Adria Candra Kinanti
+Grace Natalie Simanulang
+Ratu Salsabila Humaira
+Chalilaika Novikri 
+Tessa Aufi MUzakiah
+Naila Salsabil Ghozy
 
 
-
-// Jumlah makanan tiap kategori
-int jmlKarbo = 0, jmlProtein = 0, jmlSayurBuah = 0;
