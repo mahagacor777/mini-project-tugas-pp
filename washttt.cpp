@@ -37,10 +37,10 @@ void loadData(HariData data[], int &hariSekarang) {
 }
 
 void saveData(HariData data[], int hariSekarang) {
-    ofstream file(dataFile);          // Membuka file untuk ditulis
+    ofstream file(dataFile);          // Membuka file untuk ditulis  (menimpa file lama)
     file << hariSekarang << endl;     // Simpan hari saat ini ke dalam file
 
-    // Untuk menyimpan jumlah pakaian dan cuaca tiap hari ke file
+    // Untuk menyimpan jumlah pakaian dan cuaca tiap hari ke file 
     for (int i = 0; i < totalHari; i++) {
         file << data[i].pakaian << " " << data[i].cuaca << endl;
     }
